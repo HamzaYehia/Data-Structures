@@ -1,1 +1,1 @@
-# Data-Structures-in-C
+# My implementation of common data structures in C language.
