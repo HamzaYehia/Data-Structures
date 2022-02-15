@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-int stack[4];
+int stack[1024];
 int lastMember = 0;
 
 void push(int member) {
