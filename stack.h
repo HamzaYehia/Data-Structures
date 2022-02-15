@@ -6,28 +6,32 @@
 
 #include <stdio.h>
 
-int stack[256];
-int count = 0;
+int stack[4];
+int lastMember = 0;
 
-void push(int x) {
-    if (count == sizeof(stack) / 4) {
+void push(int member) {
+    if (lastMember == sizeof(stack) / 4) {
         printf("The stack is full, nothing pushed\n");
         return;
     }
-    stack[count] = x;
-    printf("%d pushed successfully at index %d\n", x, count);
-    count++;
+    stack[lastMember] = member;
+    printf("%d pushed successfully at index %d\n", member, lastMember);
+    lastMember++;
 }
 
 int pop() {
-    count--;
-    if (count < 0) {
+    lastMember--;
+    if (lastMember < 0) {
         printf("Stack is empty, defualt value: ");
         return 0;
     }
     else {
-        return stack[count];
+        return stack[lastMember];
     }
+}
+
+void emptyStack() {
+    lastMember = 0;
 }
 
 
