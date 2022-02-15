@@ -1,17 +1,16 @@
+// Stack is Last in First out (LIFO) Data Structure
+
 #ifndef STACK_H
 #define STACK_H
 
-// Stack is Last in First out (LIFO) Data Structure
 
 #include <stdio.h>
 
 int stack[256];
 int count = 0;
 
-void push(int x)
-{
-    if (count == sizeof(stack) / 4)
-    {
+void push(int x) {
+    if (count == sizeof(stack) / 4) {
         printf("The stack is full, nothing pushed\n");
         return;
     }
@@ -20,18 +19,16 @@ void push(int x)
     count++;
 }
 
-int pop()
-{
+int pop() {
     count--;
-    if (count < 0)
-    {
+    if (count < 0) {
         printf("Stack is empty, defualt value: ");
         return 0;
     }
-    else
-    {
+    else {
         return stack[count];
     }
 }
+
 
 #endif
