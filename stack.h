@@ -15,7 +15,7 @@ void push(int member) {
         return;
     }
     stack[lastMember] = member;
-    printf("%d pushed successfully at index %d\n", member, lastMember);
+    printf("%d pushed at index %d\n", member, lastMember);
     lastMember++;
 }
 
