@@ -15,6 +15,7 @@ typedef struct node {
     int value;
 } node_t;
 
+
 node_t* createNewNode(int newNode) {
     /* After using this function
      * you should link the previous Node
@@ -37,13 +38,10 @@ void deleteNode(node_t* node) {
 
 }
 
-void printLinkedList(node_t* head)
-{
-    node_t* temp = head;
-    while (temp != NULL)
-    {
-        printf("%d,", temp->value);
-        temp = temp->next;
+void printLinkedList(node_t* head) {
+    while (head != NULL) {
+        printf("%d,", head->value);
+        head = head->next;
     }
     printf("\n");
 }
