@@ -40,10 +40,10 @@ void deleteNode(node_t* node) {
 
 }
 
-void printLinkedList(node_t* head) {
-    while (head != NULL) {
-        printf("%d,", head->value);
-        head = head->next;
+void printLinkedList(node_t* headNode) {
+    while (headNode != NULL) {
+        printf("%d,", headNode->value);
+        headNode = headNode->next;
     }
     printf("\n");
 }
