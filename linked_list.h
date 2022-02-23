@@ -16,6 +16,7 @@ typedef struct node {
 } node_t;
 
 node_t* head;   // keeps track of the first Node
+node_t* tail;   // keeps track of the last Node
 
 
 node_t* createNewNode(int newNode) {
