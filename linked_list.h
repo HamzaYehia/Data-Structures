@@ -24,8 +24,8 @@ node_t* createNewNode(int newNode) {
     return createdNode;
 }
 
-void removeNode(node_t* node) {
-    /* After using this function you shoud link previous node to
+void deleteNode(node_t* node) {
+    /* After using this function you shoud link the previous node to
      * another node, or do:
      * previousNode->next = NULL;
      */
