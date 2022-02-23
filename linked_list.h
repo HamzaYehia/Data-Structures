@@ -38,7 +38,6 @@ void deleteNode(node_t* node) {
      */
 
     free(node);
-
 }
 
 void printLinkedList(node_t* headNode) {
