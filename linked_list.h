@@ -15,6 +15,8 @@ typedef struct node {
     int value;
 } node_t;
 
+node_t* head;   // keeps track of the first Node
+
 
 node_t* createNewNode(int newNode) {
     /* After using this function
