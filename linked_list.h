@@ -16,7 +16,10 @@ typedef struct node {
 } node_t;
 
 node_t* createNewNode(int newNode) {
-    /* returns the address of the new node */
+    /* After using this function
+     * you should link the previous Node
+     * to the created Node
+     */
 
     node_t* createdNode = (node_t*)malloc(sizeof(node_t));
     createdNode->value = newNode;
@@ -25,8 +28,8 @@ node_t* createNewNode(int newNode) {
 }
 
 void deleteNode(node_t* node) {
-    /* After using this function you shoud link the previous node to
-     * another node, or do:
+    /* After using this function you shoud link the previous Node to
+     * another Node, or do:
      * previousNode->next = NULL;
      */
 
