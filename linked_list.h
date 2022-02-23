@@ -20,14 +20,14 @@ node_t* head;   // keeps track of the first Node
 node_t* tail;   // keeps track of the last Node
 
 
-node_t* createNewNode(int newNode) {
+node_t* createNewNode(int newValue) {
     /* After using this function
      * you should link the previous Node
      * to the created Node
      */
 
     node_t* createdNode = (node_t*)malloc(sizeof(node_t));
-    createdNode->value = newNode;
+    createdNode->value = newValue;
     createdNode->next = NULL;
     return createdNode;
 }
