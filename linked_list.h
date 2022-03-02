@@ -25,7 +25,6 @@ node_t* createNewNode(int newValue) {
      * you should link the previous Node
      * to the created Node
      */
-
     node_t* createdNode = (node_t*)malloc(sizeof(node_t));
     createdNode->value = newValue;
     createdNode->next = NULL;
@@ -37,7 +36,6 @@ void deleteNode(node_t* node) {
      * another Node, or do:
      * previousNode->next = NULL;
      */
-
     free(node);
 }
 
