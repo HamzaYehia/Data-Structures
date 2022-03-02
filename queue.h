@@ -10,7 +10,7 @@ int queue[1024];
 int first = 0, last = 0;
 
 void enQueue(int element) {
-    // checks if the Queue is full
+    // check if the Queue is full
     if (last == sizeof(queue) / 4) {
         printf("The Queue is full\n");
         return;
