@@ -27,7 +27,7 @@ int deQueue() {
         printf("The Queue is empty\n");
         return 0;
     }
-
+    // else:
     int firsMember = queue[first];
 
     // move each element one step forward
