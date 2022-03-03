@@ -15,7 +15,7 @@ void enQueue(int element) {
         printf("The Queue is full\n");
         return;
     }
-    // enQueue an element to the end of the Queue
+    // else: add an element to the end of the Queue
     queue[last] = element;
     printf("%d enqueued at index: %d\n", element, last);
     last++;
@@ -27,8 +27,8 @@ int deQueue() {
         printf("The Queue is empty\n");
         return 0;
     }
-    // else:
-    int firsMember = queue[first];
+    // else: return first element of the Queue
+    int firsElement = queue[first];
 
     // move each element one step forward
     for (int i = 0; i < last - 1; i++) {
@@ -36,7 +36,7 @@ int deQueue() {
     }
     last--;
 
-    return firsMember;
+    return firsElement;
 }
 
 void emptyQueue() {
