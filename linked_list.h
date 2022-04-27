@@ -26,6 +26,13 @@ node_t* createNewNode(int newValue) {
      * to the created Node
      */
     node_t* createdNode = (node_t*)malloc(sizeof(node_t));
+
+    // allocating memory error handling
+    if (createdNode == NULL) {
+        printf("Creating new node  with value (%d) failed\n", newValue);
+        return NULL;
+    }
+
     createdNode->value = newValue;
     createdNode->next = NULL;
     return createdNode;
@@ -36,6 +43,10 @@ void deleteNode(node_t* node) {
      * another Node, or do:
      * previousNode->next = NULL;
      */
+
+     // if node is null do nothing
+    if (node == NULL) return;
+
     free(node);
 }
 
