@@ -9,7 +9,7 @@
 
 
 typedef struct node {
-    int value;    // data part
+    int value;          // data part
     struct node* next; // address part
 } node;
 
