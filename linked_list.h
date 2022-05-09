@@ -34,15 +34,15 @@ void insert_at_beginning(int value, node** head) {
     *head = temp;
 }
 
-void delete_node(node* node) {
+void delete_node(node* node_p) {
     /*
      * after using this function the user should
      * link the previous node with the next node manualy
      */
 
-    if (node == NULL) return;
+    if (node_p == NULL) return;
 
-    free(node);
+    free(node_p);
 }
 
 void delete_node_and_link_next(node* node_p, node* prev, node* next) {
