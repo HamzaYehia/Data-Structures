@@ -27,11 +27,11 @@ node* create_new_node(int val) {
     return created_node;
 }
 
-void insert_at_beginning(int value, node** head) {
+void insert_at_beginning(int val, node** head_p) {
     node* temp = (node*)malloc(1 * sizeof(node));
-    temp->value = value;
-    temp->next = *head;
-    *head = temp;
+    temp->value = val;
+    temp->next = *head_p;
+    *head_p = temp;
 }
 
 void delete_node(node* node_p) {
