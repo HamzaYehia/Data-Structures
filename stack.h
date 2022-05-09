@@ -4,7 +4,6 @@
 #define STACK_H
 
 
-#include <stdio.h>
 
 int stack[1024];
 int lastMember = 0;

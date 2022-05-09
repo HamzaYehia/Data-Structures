@@ -4,7 +4,6 @@
 #define  QUEUE_H
 
 
-#include <stdio.h>
 
 int queue[1024];
 int first = 0, last = 0;

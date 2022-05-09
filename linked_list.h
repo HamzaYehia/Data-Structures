@@ -7,53 +7,56 @@
 #define LINKED_LIST_H
 
 
-#include <stdio.h>
-#include <stdlib.h>
-
 
 typedef struct node {
-    struct node* next;
-    int value;
-} node_t;
-
-node_t* head;   // keeps track of the first Node
-node_t* tail;   // keeps track of the last Node
+    int value;    // data part
+    struct node* next; // address part
+} node;
 
 
-node_t* createNewNode(int newValue) {
-    /* After using this function
-     * you should link the previous Node
-     * to the created Node
-     */
-    node_t* createdNode = (node_t*)malloc(sizeof(node_t));
+node* create_new_node(int val) {
+    node* created_node = (node*)malloc(1 * sizeof(node));
 
-    // allocating memory error handling
-    if (createdNode == NULL) {
-        printf("Creating new node  with value (%d) failed\n", newValue);
+    if (created_node == NULL) {
+        printf("Creating new node  with value (%d) failed\n", val);
         return NULL;
     }
 
-    createdNode->value = newValue;
-    createdNode->next = NULL;
-    return createdNode;
+    created_node->value = val;
+    created_node->next = NULL;
+    return created_node;
 }
 
-void deleteNode(node_t* node) {
-    /* After using this function you shoud link the previous Node to
-     * another Node, or do:
-     * previousNode->next = NULL;
+void insert_at_beginning(int value, node** head) {
+    node* temp = (node*)malloc(1 * sizeof(node));
+    temp->value = value;
+    temp->next = *head;
+    *head = temp;
+}
+
+void delete_node(node* node) {
+    /*
+     * after using this function the user should
+     * link the previous node with the next node manualy
      */
 
-     // if node is null do nothing
     if (node == NULL) return;
 
     free(node);
 }
 
-void printLinkedList(node_t* headNode) {
-    while (headNode != NULL) {
-        printf("%d,", headNode->value);
-        headNode = headNode->next;
+void delete_node_and_link_next(node* node_p, node* prev, node* next) {
+    if (node_p == NULL) return;
+
+    free(node_p);
+    prev->next = next;
+}
+
+void print_linked_list(node* head_node) {
+
+    while (head_node != NULL) {
+        printf("%d, ", head_node->value);
+        head_node = head_node->next;
     }
     printf("\n");
 }
