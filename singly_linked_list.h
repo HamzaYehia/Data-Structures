@@ -9,8 +9,8 @@
 
 
 typedef struct node {
-    int value;          // data part
-    struct node* next; // address part
+    int value;
+    struct node* next;
 } node;
 
 
