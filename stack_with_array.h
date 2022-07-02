@@ -1,7 +1,7 @@
 // Stack is Last in First out (LIFO) Data Structure
 
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_WITH_ARRAY_H
+#define STACK_WITH_ARRAY_H
 
 
 
