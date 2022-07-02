@@ -38,7 +38,9 @@ void emptyStack() {
 
 
 bool isEmpty() {
-    if (lastMember <= -1) return true;
+    if (lastMember <= -1) {
+        return true;
+    }
     else {
         return false;
     }
