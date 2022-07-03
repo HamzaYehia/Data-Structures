@@ -47,7 +47,7 @@ void enQueue(int element) {
         return;
     }
 
-    queue[++rear] = element;
+    queue[rear++] = element;
     printf("%d enqueued, there is/are %d members before\n", element, rear - 1);
 }
 
@@ -57,7 +57,7 @@ int deQueue() {
         return 0;
     }
 
-    return queue[++front];
+    return queue[front++];
 }
 
 
