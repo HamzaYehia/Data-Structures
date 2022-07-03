@@ -52,7 +52,7 @@ void enQueue(int element) {
 }
 
 int deQueue() {
-    if (front >= rear) {
+    if (isEmpty()) {
         printf("The Queue is empty!\n");
         return 0;
     }
