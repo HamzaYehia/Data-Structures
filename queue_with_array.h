@@ -7,7 +7,7 @@
 
 int queue[1024];
 int front = 0, rear = 0;
-int sizeOfQueue = (sizeof(queue) / 4) - 1;
+int sizeOfQueue = (sizeof(queue) / 4) + 1;
 
 
 void emptyQueue() {
@@ -16,7 +16,7 @@ void emptyQueue() {
 }
 
 bool isEmpty() {
-    if (front >= rear) {
+    if (front == rear) {
         return true;
     }
     else {
@@ -26,7 +26,7 @@ bool isEmpty() {
 
 
 bool isFull() {
-    if (rear >= sizeOfQueue) {
+    if (((rear + 1) % sizeOfQueue) == front) {
         return true;
     }
     else {
@@ -38,8 +38,7 @@ bool isFull() {
 void enQueue(int element) {
 
     if (isEmpty()) {
-        front = 0;
-        rear = 0;
+        emptyQueue();
     }
 
     if (isFull()) {
@@ -47,22 +46,32 @@ void enQueue(int element) {
         return;
     }
 
-    queue[rear++] = element;
-    printf("%d enqueued, there is/are %d members before\n", element, rear - 1);
+
+    queue[rear] = element;
+    rear = (rear + 1) % sizeOfQueue;
+    printf("%d enqueued\n", element);
 }
 
-int deQueue() {
+void deQueue() {
     if (isEmpty()) {
+        emptyQueue();
         printf("The Queue is empty!\n");
-        return 0;
+        return;
     }
 
-    return queue[front++];
+    printf("%d dequeued\n", queue[front]);
+    front = (front + 1) % sizeOfQueue;
 }
 
 
 int getFront() {
-    return queue[front];
+    if (!isEmpty()) {
+        return queue[front];
+    }
+    else {
+        printf("No elements in the front!\n");
+        return 0;
+    }
 }
 
 
