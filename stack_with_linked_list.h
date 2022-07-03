@@ -13,12 +13,12 @@ typedef struct member {
 member* top = NULL;
 
 void push(int val) {
-    member* pushed_member = (member*)malloc(1 * sizeof(member));
+    member* pushedMember = (member*)malloc(1 * sizeof(member));
 
-    pushed_member->value = val;
-    pushed_member->next = top;
+    pushedMember->value = val;
+    pushedMember->next = top;
 
-    top = pushed_member;
+    top = pushedMember;
 }
 
 member* pop() {
@@ -26,9 +26,9 @@ member* pop() {
         printf("The stack is empty\n");
         return NULL;
     }
-    member* temporary_top = top;
+    member* temporaryTop = top;
     top = top->next;
-    free(temporary_top);
+    free(temporaryTop);
 
     return top;
 }
@@ -44,11 +44,11 @@ bool isEmpty() {
 }
 
 
-void empty_stack() {
+void emptyStack() {
     while (top != NULL) {
-        member* temporary_top = top;
+        member* temporaryTop = top;
         top = top->next;
-        free(temporary_top);
+        free(temporaryTop);
     }
 }
 
