@@ -1,7 +1,7 @@
 // Queue is First in First out (FIFO) Data structure
 
 #ifndef QUEUE_WITH_ARRAY
-#define  QUEUE_WITH_ARRAY
+#define QUEUE_WITH_ARRAY
 
 
 
