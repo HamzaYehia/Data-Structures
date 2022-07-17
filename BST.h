@@ -12,7 +12,7 @@ typedef struct node {
 
 node* getNewNode(int newVal) {
     node* createdNode = (node*)malloc(1 * sizeof(node));
-    
+
     createdNode->val = newVal;
     createdNode->left = NULL;
     createdNode->right = NULL;
@@ -53,6 +53,21 @@ bool search(node* root, int searchedVal) {
 }
 
 
+int getMin(node* rootPtr) {
+    if (rootPtr == NULL) return -1;
+    else if (rootPtr->left == NULL) return rootPtr->val;
+
+    getMin(rootPtr->left);
+}
+
+int getMax(node* rootPtr) {
+    if (rootPtr == NULL) return -1;
+    else if (rootPtr->right == NULL) return rootPtr->val;
+
+    getMax(rootPtr->right);
+}
+
+
 void printBST(node* root) {
     if (root == NULL) {
         printf("-empty-\n");
@@ -63,7 +78,7 @@ void printBST(node* root) {
     }
 
     printBST(root->left);
-    
+
     printBST(root->right);
 }
 
