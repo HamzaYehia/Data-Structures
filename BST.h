@@ -68,18 +68,43 @@ int getMax(node* rootPtr) {
 }
 
 
-void printBST(node* root) {
+void preOrder(node* root) {
     if (root == NULL) {
         printf("-empty-\n");
         return;
     }
-    else {
-        printf("%d\n", root->val);
+
+    printf("%d\n", root->val);
+
+    preOrder(root->left);
+
+    preOrder(root->right);
+}
+
+void inOrder(node* root) {
+    if (root == NULL) {
+        printf("-empty-\n");
+        return;
     }
 
-    printBST(root->left);
+    inOrder(root->left);
 
-    printBST(root->right);
+    printf("%d\n", root->val);
+
+    inOrder(root->right);
+}
+
+void postOrder(node* root) {
+    if (root == NULL) {
+        printf("-empty-\n");
+        return;
+    }
+
+    postOrder(root->left);
+
+    postOrder(root->right);
+
+    printf("%d\n", root->val);
 }
 
 
