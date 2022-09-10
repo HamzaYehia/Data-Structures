@@ -108,5 +108,60 @@ void postOrder(node* root) {
 }
 
 
+node* findNode(node* root, int key) {
+    if (root == NULL) return NULL;
+
+    while (root != NULL) {
+        if (key < root->val) {
+            root = root->left;
+        }
+        else if (key > root->val) {
+            root = root->right;
+        }
+        else {
+            return root;
+        }
+    }
+}
+
+node* getdMinNode(node* root) {
+    if (root == NULL) return NULL;
+
+    while (root->left != NULL) {
+        root = root->left;
+    }
+
+    return root;
+}
+
+
+node* inOrderSuccessor(node* root, int key) {
+    node* current = findNode(root, key);
+    if (current == NULL) return NULL;
+
+    // case 1: has right subtree
+    if (current->right != NULL) {
+        return getdMinNode(current->right);
+    }
+    // case 2: no right subtree
+    else {
+        node* successor = NULL;
+        node* ancestor = root;
+
+        while (ancestor != current) {
+            if (current->val < ancestor->val) {
+                successor = ancestor;
+                ancestor = ancestor->left;
+            }
+            else {
+                ancestor = ancestor->right;
+            }
+        }
+
+        return successor;
+    }
+}
+
+
 
 #endif
